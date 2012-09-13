@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load siteblocks_extras pages_extras articles_extras thumbnail %}
+
+{% block classContent %}{% endblock %}
+
+{% block sliders %}
+	<div class="content_t content_brd_t">
+				{% block_content_t %}								
+			</div><!--/content_t-->
+			
+	<div class="slider">
+		<div class="slider_in">
+			<div class="slide">
+				<div class="slider_img_out">
+					<div class="slider_img">
+					{% for article in sliderArticles %}
+						{% thumbnail article.image "950x348" crop="center" as im %}
+							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+						{% endthumbnail %}						
+					{% endfor %}
+					</div>
+				</div>
+				{% for article in sliderArticles %}
+				<div class="article slide_article" {% if not forloop.first %} style="display:none;" {% endif %} > 
+					<div class="article_h">
+						<h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+						<span class="article_date">{{ article.date_create|date:"j E, H:i" }}</span>
+					</div>
+					<div class="article_short text">{{ article.short_text|safe }}</div>
+				</div>		
+				{% endfor %}				
+			</div>					
+		</div><!--/slider_in-->
+		<div class="slider_l"></div>
+		<div class="slider_r"></div>
+	</div><!--/slider-->
+{% endblock %}
+
+{% block left_content %}
+	{% include 'articles/block_articles.html' %}	
+{% endblock %}
+
+{% block right_content %}
+	{% block_banner 'header' %}	
+	
+	{% r_block 'events' '' %}
+	{% comment %}
+		{% r_block 'rubrics' 'life' %}
+		{% r_block 'photos' '' %}
+		{% r_block 'articles' '' %}
+	{% endcomment %}
+
+	{% block_banner 'footer' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% load thumbnail %}
+<div class="events_group">
+	<h2>События на {{ date|date:"j E" }}</h2>
+	{% for event in events %}
+		<div class="event">
+			<div class="event_date"></div>
+			<div class="event_img_zs"><a href="{{ event.get_absolute_url }}">
+				{% thumbnail event.image "94x121" crop="center" as im %}
+					<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ event.title }}">
+				{% endthumbnail %}
+			</a></div>
+			<div class="event_name"><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></div>
+		</div>
+	{% endfor %}
+</div><!--/events_group-->

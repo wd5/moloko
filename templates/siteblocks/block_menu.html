@@ -1,0 +1,12 @@
+{% if divides %}
+<div class="menu">
+    <ul>
+        {% for divide in divides %}
+            <li {% ifequal divide.get_absolute_url current %}class="menu_current"{% endifequal %}><span><a href="{{ divide.get_absolute_url }}">{{ divide.title }}</a></span></li>
+        {% endfor %}
+        {% for menu in menus %}
+            <li {% ifequal menu.url currentM %}class="menu_current"{% endifequal %}><span><a href="{{ menu.url }}">{{ menu.title }}</a></span></li>
+        {% endfor %}
+    </ul>
+</div><!--/menu-->
+{% endif %}

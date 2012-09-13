@@ -1,0 +1,510 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-11 13:54+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: dashboard.py:17
+msgid "Quick links"
+msgstr ""
+
+#: dashboard.py:23
+msgid "Return to site"
+msgstr ""
+
+#: dashboard.py:24
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:138
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:4
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:5
+msgid "Change password"
+msgstr ""
+
+#: dashboard.py:26
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:147
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:4
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:5
+msgid "Log out"
+msgstr ""
+
+#: dashboard.py:32 menu.py:25
+msgid "Applications"
+msgstr ""
+
+#: dashboard.py:38 menu.py:29
+msgid "Administration"
+msgstr ""
+
+#: dashboard.py:43 dashboard.py:64
+msgid "Recent Actions"
+msgstr ""
+
+#: menu.py:22
+msgid "Dashboard"
+msgstr ""
+
+#: apps/articles/__init__.py:2
+msgid "Articles"
+msgstr "Работа со статьями"
+
+#: apps/articles/__init__.py:3
+msgid "articles"
+msgstr "работа со статьями"
+
+#: apps/articles/models.py:41
+msgid "divide"
+msgstr "раздел"
+
+#: apps/articles/models.py:42
+msgid "divides"
+msgstr "разделы"
+
+#: apps/articles/models.py:86
+msgid "rubric"
+msgstr "рубрика"
+
+#: apps/articles/models.py:87
+msgid "rubris"
+msgstr "рубрики"
+
+#: apps/articles/models.py:102
+msgid "tag"
+msgstr "тэг"
+
+#: apps/articles/models.py:103
+msgid "tags"
+msgstr "тэги"
+
+#: apps/articles/models.py:127
+msgid "spec.project"
+msgstr "спец.проект"
+
+#: apps/articles/models.py:128
+msgid "spec.projects"
+msgstr "спец.проекты"
+
+#: apps/articles/models.py:146
+msgid "author"
+msgstr "автор"
+
+#: apps/articles/models.py:147
+msgid "authors"
+msgstr "авторы"
+
+#: apps/articles/models.py:223
+msgid "article_item"
+msgstr "статья"
+
+#: apps/articles/models.py:224
+msgid "article_items"
+msgstr "статьи"
+
+#: apps/articles/models.py:267
+msgid "photoalbum"
+msgstr "фотоальбом"
+
+#: apps/articles/models.py:268
+msgid "photoalbums"
+msgstr "фотоальбомы"
+
+#: apps/articles/models.py:307
+msgid "photo"
+msgstr "фотография"
+
+#: apps/articles/models.py:308
+msgid "photos"
+msgstr "фотографии"
+
+#: apps/events/__init__.py:2
+msgid "Events"
+msgstr "События"
+
+#: apps/events/__init__.py:3
+msgid "events"
+msgstr "cобытия"
+
+#: apps/events/models.py:43
+msgid "eventItem"
+msgstr "cобытие"
+
+#: apps/events/models.py:44
+msgid "eventItems"
+msgstr "cобытия"
+
+#: apps/pages/__init__.py:3
+msgid "Pages"
+msgstr "Статичные страницы"
+
+#: apps/pages/__init__.py:4
+msgid "pages"
+msgstr "статичыне страницы"
+
+#: apps/pages/models.py:67
+msgid "page_item"
+msgstr "страница"
+
+#: apps/pages/models.py:68
+msgid "page_items"
+msgstr "страницы"
+
+#: apps/siteblocks/__init__.py:3
+msgid "Siteblocks"
+msgstr "Блоки сайта"
+
+#: apps/siteblocks/__init__.py:4
+msgid "siteblocks"
+msgstr "блоки сайта"
+
+#: apps/siteblocks/models.py:51
+msgid "menu_element"
+msgstr "элемент"
+
+#: apps/siteblocks/models.py:52
+msgid "menu_elements"
+msgstr "главное меню"
+
+#: apps/siteblocks/models.py:82
+msgid "setting"
+msgstr "параметр"
+
+#: apps/siteblocks/models.py:83
+msgid "setting_plural"
+msgstr "настройки"
+
+#: apps/siteblocks/models.py:133
+msgid "banner_item"
+msgstr "баннер"
+
+#: apps/siteblocks/models.py:134
+msgid "banner_items"
+msgstr "баннеры"
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/actions.html:12
+#: templates/admin/actions.html:4
+msgid "Run the selected action"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/actions.html:14
+#: templates/admin/actions.html:4
+msgid "Go"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/actions.html:20
+#: templates/admin/actions.html:11
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/actions.html:22
+#: templates/admin/actions.html:11
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/actions.html:27
+#: templates/admin/actions.html:13
+msgid "Clear selection"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/app_index.html:7
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:160
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_form.html:19
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list.html:52
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/logged_out.html:5
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:6
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:9
+#: templates/admin/app_index.html:9 templates/admin/change_form.html:19
+#: templates/admin/change_list.html:42
+#: templates/admin/delete_confirmation.html:6
+#: templates/admin/delete_selected_confirmation.html:6
+msgid "Home"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/app_index.html:9
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:113
+msgid "Menu Search"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:115
+msgid "Search in menu"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base.html:129
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:4
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:5
+msgid "Documentation"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base_site.html:5
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/base_site.html:28
+msgid "admin"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_form.html:22
+#: templates/admin/change_form.html:22
+#: templates/admin_tools/dashboard/modules/app_list.html:13
+msgid "Add"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_form.html:30
+#: templates/admin/change_form.html:31
+msgid "History"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_form.html:31
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/stacked.html:10
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/tabular.html:28
+#: templates/admin/change_form.html:32
+msgid "View on site"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_form.html:41
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list.html:78
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/login.html:17
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:21
+#: templates/admin/change_form.html:43 templates/admin/change_list.html:73
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list.html:65
+#: templates/admin/change_list.html:64
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list.html:89
+#: templates/admin/change_list.html:84
+msgid "Filter"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list_results.html:18
+msgid "Toggle sorting"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/change_list_results.html:19
+msgid "Remove from sorting"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/login.html:8
+msgid "Enter username and password"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/login.html:32
+msgid "Username:"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/login.html:39
+msgid "Password:"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/login.html:48
+msgid "Log in"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:10
+#: templates/admin/pagination.html:10
+msgid "Show all"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:22
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:24
+msgid "Previous"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:32
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:34
+msgid "Next"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/pagination.html:40
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/submit_line.html:5
+#: templates/admin/pagination.html:11
+msgid "Save"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/search_form.html:5
+msgid "Search"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/search_form.html:7
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/search_form.html:7
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/submit_line.html:3
+#: templates/admin/delete_confirmation.html:10
+msgid "Delete"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/submit_line.html:6
+msgid "Save as new"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/submit_line.html:7
+msgid "Save and add another"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/submit_line.html:8
+msgid "Save and continue editing"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/stacked.html:69
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/stacked.html:72
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/tabular.html:117
+msgid "Remove"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/tabular.html:15
+msgid "Delete?"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/admin/edit_inline/tabular.html:114
+#, python-format
+msgid "+Add another %(verbose_name)s"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/logged_out.html:10
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/logged_out.html:12
+msgid "Log in again"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:7
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:10
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:13
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:25
+msgid "Password change"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:10
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:14
+msgid "Password change successful"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_done.html:16
+msgid "Your password was changed."
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:28
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:34
+msgid "Old password"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:41
+msgid "New password"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:48
+msgid "Password (again)"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templates/registration/password_change_form.html:57
+msgid "Change my password"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templatetags/admintools_bootstrap.py:20
+msgid "Open site"
+msgstr ""
+
+#: src/admintools-bootstrap/admintools_bootstrap/templatetags/admintools_bootstrap.py:29
+msgid "Django site"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:17
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:25
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:33
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: templates/admin/delete_confirmation.html:38
+#: templates/admin/delete_selected_confirmation.html:43
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:9
+msgid "Delete multiple objects"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:16
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:24
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: templates/admin/filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: templates/admin_tools/dashboard/modules/app_list.html:14
+msgid "Change"
+msgstr ""

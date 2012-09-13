@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load pagination_tags %}
+{% load siteblocks_extras pages_extras articles_extras pytils_numeral %}
+
+{% block title %}
+	Календарь событий - {{ datetime|date:"F" }}
+{% endblock %}
+
+{% block left_content %}
+	<div class="current_h">Афиша</div>
+	<div class="submenu">
+		<ul>
+			<li><a href="/afisha/">События списком</a></li>
+			<li class="submenu_current"><a href="/afisha/calendar/">Календарь событий</a></li>
+		</ul>
+	</div>
+	
+	<div class="p_h">&nbsp; &nbsp;</div>
+	
+	<div class="cal">
+		<div class="cal_month_ctrl">
+			<a href="/afisha/calendar/{{ prevDate|date:"Y" }}/{{ prevDate|date:"n" }}/" class="pgn_l"></a>
+			<div class="cal_month">{{ datetime|date:"F" }}</div>
+			<a href="/afisha/calendar/{{ nextDate|date:"Y" }}/{{ nextDate|date:"n" }}/" class="pgn_r"></a>
+		</div>
+
+		<table class="cal_table" cellspacing="12">
+			<tr class="cal_weekdays">
+				<th>Пн</th>
+				<th>Вт</th>
+				<th>Ср</th>
+				<th>Чт</th>
+				<th>Пт</th>
+				<th>Сб</th>
+				<th>Вс</th>
+			</tr>
+			<tr>
+			{% for item in monthDateArray %}	
+				{% if forloop.counter0 == 6 or forloop.counter0 == 13 or forloop.counter0 == 20 or forloop.counter0 == 27 or forloop.counter0 == 34 %}										
+					{% if item.date %}
+						{% ifequal item.countEvents 0 %}
+							<td class="cal_cell">
+								<div class="cal_day">{{ item.date|date:"j" }}</div>									
+							</td>
+						{% else %}
+							<td class="cal_cell_full">
+                                <a href="/get_events/{{ item.date|date:"d.m.Y" }}/" class="fancybox">
+                                    <div class="cal_day">{{ item.date|date:"j" }}</div>
+                                    <div class="cal_events">{{ item.countEvents }} событи{{ item.countEvents|choose_plural:"е,я,й" }}</div>
+                                </a>
+							</td>
+						{% endifequal %}
+					{% else %}
+						<td></td>				
+					{% endif %}
+					</tr>
+					<tr>
+				{% else %}				
+					{% if item.date %}
+						{% ifequal item.countEvents 0 %}
+							<td class="cal_cell">
+								<div class="cal_day">{{ item.date|date:"j" }}</div>
+							</td>
+						{% else %}
+							<td class="cal_cell_full">
+								<a href="/get_events/{{ item.date|date:"d.m.Y" }}/" class="fancybox">
+									<span class="cal_day">{{ item.date|date:"j" }}</span>
+									<span class="cal_events">{{ item.countEvents }} событи{{ item.countEvents|choose_plural:"е,я,й" }}</span>
+								</a>
+							</td>
+						{% endifequal %}
+					{% else %}
+						<td></td>				
+					{% endif %}		
+				{% endif %}				
+			{% endfor %}
+		</table>
+	</div><!--/cal-->
+
+{% endblock %}
+
+
+{% block right_content %}
+
+	{% block_banner 'double' %}
+
+{% endblock %}

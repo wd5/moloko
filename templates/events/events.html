@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load pagination_tags %}
+{% load siteblocks_extras pages_extras articles_extras %}
+
+{% block title %}
+	{% if allRecentEvents %}
+		Архив событий	
+	{% else %}
+		{% if event %}
+			{{ event.title }} - Афиша
+		{% else %}	
+			Афиша
+		{% endif %}		
+	{% endif %}	
+{% endblock %}
+
+{% block left_content %}
+	<div class="current_h">Афиша</div>
+	<div class="submenu">
+		<ul>
+			<li {% if not allRecentEvents and not event %} class="submenu_current" {% endif %}><a href="/afisha/">События списком</a></li>
+			<li><a href="/afisha/calendar/">Календарь событий</a></li>
+		</ul>
+	</div>	
+
+	<div class="p_h">&nbsp; &nbsp;</div>
+
+	{% if eventsSoon %}
+		<div class="events_group">
+			<h2>Скоро будут</h2>
+			{% for event in eventsSoon %}
+				<div class="event">
+					<div class="event_date">{{ event.date_create|date:"j E" }}</div>
+					<div class="event_img_zs"><a href="/afisha/{{ event.id }}/">
+						{% thumbnail event.image "94x121" crop="center" as im %}
+							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ event.title }}">
+						{% endthumbnail %}
+					</a></div>
+					<div class="event_name"><a href="/afisha/{{ event.id }}/">{{ event.title }}</a></div>
+				</div>
+			{% endfor %}
+		</div><!--/events_group-->
+	{% endif %}
+
+	{% if eventsRecent %}
+		<div class="events_group">
+			<h2>Недавно состоялись <a class="events_group_lnk" href="/afisha/all/">весь архив событий</a></h2>
+			{% for event in eventsRecent %}
+				<div class="event">
+					<div class="event_date">{{ event.date_create|date:"j E" }}</div>
+					<div class="event_img_zs"><a href="/afisha/{{ event.id }}/">
+						{% thumbnail event.image "94x121" crop="center" as im %}
+							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ event.title }}">
+						{% endthumbnail %}
+					</a></div>
+					<div class="event_name"><a href="/afisha/{{ event.id }}/">{{ event.title }}</a></div>
+				</div>		
+			{% endfor %}
+		</div><!--/events_group-->
+	{% endif %}
+
+	{% if allRecentEvents %}
+		<div class="events_group">
+			<h2>Архив событий</h2>
+			{% autopaginate allRecentEvents 30 %}
+			{% for event in allRecentEvents %}
+				<div class="event">
+					<div class="event_date">{{ event.date_create|date:"j E" }}</div>
+					<div class="event_img_zs"><a href="/afisha/{{ event.id }}/">
+						{% thumbnail event.image "94x121" crop="center" as im %}
+							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ event.title }}">
+						{% endthumbnail %}
+					</a></div>
+					<div class="event_name"><a href="/afisha/{{ event.id }}/">{{ event.title }}</a></div>
+				</div>		
+			{% endfor %}
+		{% paginate %}	
+		</div><!--/events_group-->
+	{% endif %}
+
+	{% if event %}
+		<div class="event_page">
+			<div class="event_page_date">{{ event.date_create|date:"j E" }}</div>
+			<h1>{{ event.title }}</h1>
+			<div class="event_place">{{ event.place }}</div>			
+			<div class="event_img_zl">
+			{% thumbnail event.image "320" as im %}
+				<img src="{{ im.url }}" alt="" />
+			{% endthumbnail %}</div>
+			<div class="text">{{ event.description|safe }}</div>
+		</div><!--/event_page-->
+		
+		<div class="share">
+		<div class="share_in">Расскажите об этом друзьям:
+			<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+			<span class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir"></span> 
+
+		</div>
+		</div>
+
+		{% for article in event.get_articles  %}		
+			<div class="article">
+				<div class="article_h">
+					<h2><span class="article_type">Отчет:</span> <a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+					<span class="article_date">{{ article.date_create|date:"j E, H:i" }}</span>
+				</div>
+				{% if article.image %}
+					<div class="article_img"><a href="{{ article.get_absolute_url }}"><img src="{{ article.image.url }}" alt="{{ article.title }}" /></a></div>
+				{% endif %}
+				<div class="article_short text">
+					{{ article.short_text|safe }}
+				</div>
+				<div class="article_tags">
+					{% for tag in article.tag.all %}					
+							<a href="/articles/tag/{{ tag.id }}" rel="tag">{{ tag.title }}</a>{% if not forloop.last %},{% endif %}			
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}
+
+{% block right_content %}
+
+	{% block_banner 'header' %}
+
+	{% r_block 'photos' '' %}	
+
+	{% block_banner 'footer' %}
+
+{% endblock %}

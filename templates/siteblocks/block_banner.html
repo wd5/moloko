@@ -1,0 +1,56 @@
+{% if banner and not bannerSecond %}
+	<div class="ad">
+		<div class="ad_h"><span>Реклама</span></div>
+		{% if banner.flash %}
+			<div class="banner">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="100%" align="middle" id="fl">
+	            <param name="allowScriptAccess" value="sameDomain" />
+	            <param name="allowFullScreen" value="false" />
+	            <param name="movie" value="{{ banner.get_src_file }}" />
+	            <param name="quality" value="high" />
+	            <param name="bgcolor" value="#ffffff" />
+	            <param name="SCALE" value="exactfit" />
+	            <embed src="{{ banner.get_src_file }}" width="180px" height="180px" align="middle" quality="high" bgcolor="#ffffff" name="Zanaves Blue" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/ru/flashplayer/" scale="exactfit" />
+	        </object>
+	    	</div>
+	    {% else %}
+	        <div class="banner"><a href="{{ banner.url }}" {% if banner.is_blank %}target="_blank"{% endif %}><img src="{{ banner.banner_file.url }}" alt="{{ banner.title }}" title="{{ banner.title }}" /></a></div>
+	    {% endif %}	
+	</div><!--/ad-->
+{% endif %}
+{% if bannerSecond %}
+	<div class="ad">
+		<div class="ad_h"><span>Реклама</span></div>
+		{% if banner.flash %}
+			<div class="banner">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="100%" align="middle" id="fl">
+	            <param name="allowScriptAccess" value="sameDomain" />
+	            <param name="allowFullScreen" value="false" />
+	            <param name="movie" value="{{ banner.get_src_file }}" />
+	            <param name="quality" value="high" />
+	            <param name="bgcolor" value="#ffffff" />
+	            <param name="SCALE" value="exactfit" />
+	            <embed src="{{ banner.get_src_file }}" width="180px" height="180px" align="middle" quality="high" bgcolor="#ffffff" name="Zanaves Blue" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/ru/flashplayer/" scale="exactfit" />
+	        </object>
+	    	</div>
+	    {% else %}
+	        <div class="banner"><a href="{{ banner.url }}" {% if banner.is_blank %}target="_blank"{% endif %}><img src="{{ banner.banner_file.url }}" alt="{{ banner.title }}" title="{{ banner.title }}" /></a></div>
+	    {% endif %}	
+
+		{% if bannerSecond.flash %}
+			<div class="banner">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="100%" align="middle" id="fl">
+	            <param name="allowScriptAccess" value="sameDomain" />
+	            <param name="allowFullScreen" value="false" />
+	            <param name="movie" value="{{ bannerSecond.get_src_file }}" />
+	            <param name="quality" value="high" />
+	            <param name="bgcolor" value="#ffffff" />
+	            <param name="SCALE" value="exactfit" />
+	            <embed src="{{ bannerSecond.get_src_file }}" width="180px" height="180px" align="middle" quality="high" bgcolor="#ffffff" name="Zanaves Blue" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/ru/flashplayer/" scale="exactfit" />
+	        </object>
+	    	</div>
+	    {% else %}
+	        <div class="banner"><a href="{{ bannerSecond.url }}" {% if bannerSecond.is_blank %}target="_blank"{% endif %}><img src="{{ bannerSecond.banner_file.url }}" alt="{{ bbannerSecond.title }}" title="{{ bannerSecond.title }}" /></a></div>
+	    {% endif %}			
+	</div><!--/ad-->
+{% endif %}

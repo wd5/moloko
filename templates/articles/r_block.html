@@ -1,0 +1,55 @@
+{% load thumbnail %}
+{% if items %}
+<div class="r_block">
+	<h2 class="r_block_h">{{ block_name }}</h2>
+
+	{% ifequal type 'events' %}
+		<div class="events">
+		{% for event in items %}
+			<div class="event">	
+				<div class="event_date">{{ event.date_create|date:"j E"}}</div>
+				<div class="event_img_zs"><a href="/afisha/{{event.id}}/">{% thumbnail event.image "94x121" crop="center" as im %}	
+				<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{event.title }}" />{% endthumbnail %}</a></div>
+				<div class="event_name"><a href="/afisha/{{event.id}}/">{{event.title }}</a></div>	
+			</div>		
+		{% endfor %}
+		</div>
+	{% endifequal %}
+
+	{% ifequal type 'photos' %}
+		<div class="photos_r">
+		{% for article in items %}
+			<a href="{{ article.get_absolute_url }}">
+				{% thumbnail article.image "105x74" crop="center" as im %}
+				<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+				alt="{{ article.title }}">
+				{% endthumbnail %}
+			</a>	
+		{% endfor %}
+		</div><!--/photos_r-->
+	{% endifequal %}
+
+	{% ifequal type 'articles' %}
+		<div class="latests">
+		{% for article in items %}
+			<div class="latest">
+				<div class="latest_date">{{ article.date_create|date:"j E, H:i" }}</div>
+				<div class="latest_h"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></div>
+			</div>
+		{% endfor %}
+		</div><!--/latest-->
+	{% endifequal %}
+
+	{% ifequal type 'rubrics' %}
+		<div class="sections">
+			<ul>
+			{% for rubric in items %}
+				<li><a href="{{ rubric.get_absolute_url }}">{{ rubric.title }}</a></li>
+			{% endfor %}
+			</ul>
+		</div><!--/sections-->
+	{% endifequal %}
+
+	<div class="r_block_all">{% if bottom_link %}<a href="{{ bottom_link_url }}">{{ bottom_link }}</a>{% endif %}</div>
+</div><!--/soon-->	
+{% endif %}

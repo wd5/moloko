@@ -1,0 +1,67 @@
+{% load thumbnail %}
+<div class="article_page">
+	<div class="article">
+		<div class="article_cat"><a href="{{ article.rubric.get_absolute_url }}">{{ article.rubric }}</a> /</div>
+		<div class="article_h">
+			<h1>{% if article.spec_project %}<span class="article_type">{{article.spec_project}}: </span>{% endif %}{{ article.title }}</h1>
+			<span class="article_date">{{ article.date_create|date:"j E, H:i" }}</span>
+		</div>
+		{% if article.image %}
+			{% thumbnail article.image "750" as im %}
+				<div class="article_img">
+					<img src="{{ im.url }}" width="{{ im.width }}" alt="{{ article.title }}" />
+					{% comment %}<img src="{{ article.image.url }}" alt="{{ article.title }}" />{% endcomment %}					
+				</div>
+			{% endthumbnail %}		
+		{% endif %}
+		<div class="article_full text">
+			{{ article.text|safe }}			
+		</div>
+		
+		<div class="article_author">{{ article.author }}</div>
+		
+		
+		{% if article.get_albums %}
+			{% for album in article.get_albums %}
+			<div class="article_photos">
+				{% for photo in album.get_photos %}
+					<a class="fancybox" rel="album{{album.id}}" href="{{ photo.image.url }}">
+						{% thumbnail photo.image "105x74" crop="center" as im %}
+							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ photo.title }}">
+						{% endthumbnail %}
+					</a>					
+				{% endfor %}			
+				<div class="photos_author">Фото: {{album.author}}</div>
+			</div>
+			{% endfor %}
+		{% endif %}
+		
+		<div class="article_tags">
+			{% for tag in article.tag.all %}					
+					<a href="/articles/tag/{{ tag.id }}" rel="tag">{{ tag.title }}</a>{% if not forloop.last %},{% endif %}			
+			{% endfor %}
+		</div>
+	</div>
+	
+	<div class="share">
+		<div class="share_in">Расскажите об этом друзьям:
+			<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+<span class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir"></span> 
+
+		</div>
+	</div>
+
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 2953454, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+</script>
+
+</div><!--/articles-->

@@ -1,0 +1,36 @@
+{% if articles %}
+{% load pagination_tags thumbnail %}
+<div class="articles">
+	{% autopaginate articles 7 %}
+	{% for article in articles %}
+		<div class="article">
+			<div class="article_cat"><a href="{{ article.rubric.get_absolute_url }}">{{ article.rubric }}</a> /</div>
+			<div class="article_h">
+				<h2>{% if article.spec_project %}<span class="article_type">{{article.spec_project}}: </span>{% endif %}<a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+				<span class="article_date">{{ article.date_create|date:"j E, H:i" }}</span>
+			</div>
+			{% if article.image %}
+				{% thumbnail article.image "745" as im %}
+					<div class="article_img">
+						<a href="{{ article.get_absolute_url }}"><img src="{{ im.url }}" width="{{ im.width }}" alt="{{ article.title }}" /></a>
+						{% comment %}
+						<a href="{{ article.get_absolute_url }}"><img src="{{ article.image.url }}" alt="{{ article.title }}" /></a>
+						{% endcomment %}
+					</div>					
+				{% endthumbnail %}	
+			{% endif %}
+			<div class="article_short text">
+				<p>{{ article.short_text|safe }}</p>
+			</div>
+			<div class="article_tags">				
+				{% for tag in article.tag.all %}					
+					<a href="/articles/tag/{{ tag.id }}" rel="tag">{{ tag.title }}</a>{% if not forloop.last %},{% endif %}			
+				{% endfor %}					
+			</div>
+		</div>
+	{% endfor %}
+	
+	{% paginate %}	
+
+</div><!--/articles-->
+{% endif %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load siteblocks_extras pages_extras articles_extras %}
+
+{% block title %}
+	{% if divideTitle %}
+		{% if article.title %}
+			{{ article.title }}
+		{% else %}
+			{{ divideTitle }}			
+		{% endif %}
+	{% endif %}
+	{% if tagTitle %}
+		Статьи с тегом «{{ tagTitle }}»
+	{% endif %}
+	{% if photo %}
+		{{ photo }}
+	{% endif %}
+{% endblock %}
+
+{% block left_content %}
+<div class="current_h">
+	{% if divideTitle %}
+		{{ divideTitle }}
+	{% endif %}
+	{% if tagTitle %}
+		Статьи с тегом «{{ tagTitle }}»
+	{% endif %}
+	{% if photo %}
+		{{ photo }}
+	{% endif %}
+</div>
+	{% if article %} 
+		{% include 'articles/article.html' %}		
+	{% else %}
+		{% include 'articles/block_articles.html' %}
+	{% endif %}
+{% endblock %}
+
+
+{% block right_content %}
+	{% if divide_slug %}
+		{% r_block 'rubrics' divide_slug %}
+	{% endif %}
+
+	{% block_banner 'header' %}
+
+	{% r_block 'articles' '' %}	
+
+	{% block_banner 'footer' %}
+
+{% endblock %}

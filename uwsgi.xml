@@ -1,0 +1,8 @@
+<uwsgi>
+    <pythonpath>/home/dailymilk/dailymilk/</pythonpath>
+    <pythonpath>/home/dailymilk/</pythonpath>
+    <app mountpoint="/">
+        <script>django_wsgi</script>
+    </app>
+    <workers>3</workers>
+</uwsgi>

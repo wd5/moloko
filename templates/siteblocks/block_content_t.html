@@ -1,0 +1,16 @@
+{% load thumbnail %}
+{% if articlesByAlbums %}
+<div class="photos_t">
+	{% for article in articlesByAlbums %}
+		<a href="{{ article.get_absolute_url }}">
+			{% thumbnail article.image "105x74" crop="center" as im %}
+			<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+			alt="{{ article.title }}">
+			{% endthumbnail %}
+		</a>	
+	{% endfor %}
+	<a href="/photo/" class="photos_t_lnk"></a> 
+</div>
+{% endif %}
+
+			

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*6-7*/
+.col,
+.socials_pl li,
+.event,
+.submenu li,
+.cal_month {
+	*display:inline;
+	*zoom:1;
+}
+.ad_h {
+	*position:relative;
+	*zoom:1;
+}
+/*6-7*/

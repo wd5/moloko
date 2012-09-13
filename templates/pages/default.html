@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load thumbnail siteblocks_extras pages_extras articles_extras %}
+
+{% if page.title %}
+    {% block title %}
+        {{ page.title }}
+    {% endblock %}
+{% endif %}
+
+{% block left_content %}
+    <div class="text_page">
+    	<div class="article_h">
+        	<h1>{{ page.title }}</h1>    
+        </div>    
+    </div>
+    <div class="text">{{ page.content|safe }}</div>
+{% endblock %}
+
+{% block right_content %}
+		{% r_block 'photos' '' %}
+		{% r_block 'articles' '' %}
+{% endblock %}
